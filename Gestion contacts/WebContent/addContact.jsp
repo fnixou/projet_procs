@@ -16,10 +16,38 @@
 		<td><i>Nom : <input type="text" name="nom" size="25"/></i>
 	</tr>
 	<tr>
-		<td><i>Telephone : <input type="text" name="tel" size="25"/></i>
+		<td><i>Mail : <input type="text" name="mail" size="25"/></i>
 	</tr>
 	<tr>
-		<td><i>Mail : <input type="text" name="mail" size="25"/></i>
+	 	<td><h3>ADRESSE</h3></td>
+	</tr>
+	<tr>
+		<td><i>Rue : <input type="text" name="rue" size="25"/></i>
+		<td><i>Ville : <input type="text" name="ville" size="25"/></i>
+		<td><i>Code Postal : <input type="text" name="zip" size="25"/></i>
+		<td><i>Pays : <input type="text" name="pays" size="25"/></i>
+	</tr>
+	<tr>
+		<td><h3>TELEPHONE</h3></td>
+	</tr>
+	<tr>
+		<td><i>Mobile : <input type="text" name="mobile" size="25"/></i>
+	</tr>
+	<tr>
+		<td><i>Maison : <input type="text" name="maison" size="25"/></i>
+	</tr>
+	<tr>
+		<td><i>Bureau : <input type="text" name="bureau" size="25"/></i>
+	</tr>
+	<tr>
+		<td><i>Selectionner un groupe : <select name="groupes">
+		<i><option>Famille</option></i>
+		<i><option>Collegues</option></i>
+		<i><option>Amis</option></i>
+		</select>
+	</tr>
+	<tr>
+		<td><i>Ajouter un groupe : <input type="text" name="nouveauGroupe" size="25"/></i>
 	</tr>
 	<tr>
 		<td><input class="button" type="submit" value="submit"/>

@@ -1,9 +1,12 @@
 package domain;
 
+import java.util.Set;
+
 public class ContactGroup {
 	
 	private int groupId;
 	private String groupName;
+	private Set contacts;
 
 	
 	public ContactGroup() {

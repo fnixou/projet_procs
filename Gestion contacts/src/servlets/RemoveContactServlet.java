@@ -38,10 +38,10 @@ public class RemoveContactServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mail;
-		mail = request.getParameter("mail");
+		String id;
+		id = request.getParameter("idContact");
 		Contact c = new Contact();
-		c.setEmail(mail);
+		c.setId(Long.valueOf(id).longValue());
 		
 		ContactDAO DAO = new ContactDAO();
 		DAO.RemoveContact(c);

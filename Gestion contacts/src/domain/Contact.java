@@ -1,11 +1,15 @@
 package domain;
 
+import java.util.Set;
+
 public class Contact {
 	
 	private long id;
 	private String firstName;
 	private String lastName;
 	private String email;
+	private Set books;
+	private Set profiles;
 	
 	public Contact() {
 		super();

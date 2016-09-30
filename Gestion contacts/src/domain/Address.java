@@ -6,19 +6,19 @@ public class Address {
 	private String street;
 	private String city;
 	private String country;
-	private String postalCode;
+	private String zip;
 	
 	
 	public Address() {
 		super();
 	}
 
-	public Address(String street, String city, String country, String postalCode) {
+	public Address(String street, String city, String country, String zip) {
 		super();
 		this.street = street;
 		this.city = city;
 		this.country = country;
-		this.postalCode = postalCode;
+		this.zip = zip;
 	}
 	
 
@@ -60,13 +60,13 @@ public class Address {
 	}
 
 
-	public String getPostalCode() {
-		return postalCode;
+	public String getZip() {
+		return zip;
 	}
 
 
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 	
 	

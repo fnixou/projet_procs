@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+  <class name="Contact" table="Contact_Table">
+  	 <id name="id" type="long" column="ID_CONTACT" >
+   		<generator class="increment"/>
+  	 </id>
+  	 
+  	 <property name="firstName">
+  	 	<column name="FIRSTNAME" />
+  	 </property>
+  	 
+  	 <property name="lastName">
+  	 	<column name="LASTNAME" />
+  	 </property>
+  	 
+  	 <property name="email">
+  	 	<column name="EMAIL" />
+  	 </property>
+  	 
+  	 <set name="phones" inverse="true">
+  	 	<key column="ID_CONTACT"/>
+  	 	<one-to-many class="PhoneNumber"/>
+  	 </set>
+  	 
+  	 <set name="books" table="CONTACT_GROUPCONTACT">
+  	 	<key column="ID_CONTACT"/>
+  	 	<many-to-many class="ContactGroup" column="ID_CONTACTGROUP">
+  	 	</many-to-many>
+  	 </set>
+  	 
+  	 <many-to-one name="add" column="ID_ADDRESS" unique="true" not-null="true"/>
+  	 
+  </class>
+</hibernate-mapping>

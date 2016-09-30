@@ -10,7 +10,7 @@
 <form method="post" action="RemoveContactServlet">
 	<table>
 	<tr>
-		<td><i>Mail du contact a supprimer: <input type="text" name="mail" size="25"/></i></td>
+		<td><i>id contact: <input type="text" name="idContact" size="25"/></i></td>
 	</tr>
 	<tr>
 		<td><input class="button" type="submit" value="remove"/></td>
