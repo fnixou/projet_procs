@@ -19,7 +19,8 @@
 		<td><i>Mail: <input type="text" name="mail" size="25"/></i></td>
 	</tr>
 	<tr>
-		<td><input class="button" type="submit" value="search"/></td>
+		<td><input class="button" type="submit" value="search"/>
+			<input class="button" type="reset" value="reset"/></td>
 	</tr>
 	</table>
 </form>

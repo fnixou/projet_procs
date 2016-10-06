@@ -51,6 +51,7 @@
 	</tr>
 	<tr>
 		<td><input class="button" type="submit" value="submit"/>
+			<input class="button" type="reset" value="reset"/></td>
 	</tr>
 	</table>
 </form>	

@@ -11,16 +11,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>CreerContactServlet</display-name>
-    <servlet-name>CreerContactServlet</servlet-name>
-    <servlet-class>servlets.CreerContactServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CreerContactServlet</servlet-name>
-    <url-pattern>/CreerContactServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>servlets.LoginServlet</servlet-class>
@@ -58,5 +48,15 @@
   <servlet-mapping>
     <servlet-name>SearchContactServlet</servlet-name>
     <url-pattern>/SearchContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddContactServlet</display-name>
+    <servlet-name>AddContactServlet</servlet-name>
+    <servlet-class>servlets.AddContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddContactServlet</servlet-name>
+    <url-pattern>/AddContactServlet</url-pattern>
   </servlet-mapping>
 </web-app>

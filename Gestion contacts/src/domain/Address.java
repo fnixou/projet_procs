@@ -7,8 +7,8 @@ public class Address {
 	private String city;
 	private String country;
 	private String zip;
-	
-	
+	private Contact contact;
+
 	public Address() {
 		super();
 	}
@@ -67,6 +67,14 @@ public class Address {
 
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+	
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
 	}
 	
 	

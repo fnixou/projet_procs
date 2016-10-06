@@ -8,18 +8,18 @@
   	 </id>
   	 
   	 <property name="firstName">
-  	 	<column name="FIRSTNAME" />
+  	 	<column name="FIRSTNAME"/>
   	 </property>
   	 
   	 <property name="lastName">
-  	 	<column name="LASTNAME" />
+  	 	<column name="LASTNAME"/>
   	 </property>
   	 
   	 <property name="email">
-  	 	<column name="EMAIL" />
+  	 	<column name="EMAIL"/>
   	 </property>
   	 
-  	 <set name="phones" inverse="true">
+  	 <set name="profiles" inverse="true">
   	 	<key column="ID_CONTACT"/>
   	 	<one-to-many class="PhoneNumber"/>
   	 </set>
@@ -30,7 +30,7 @@
   	 	</many-to-many>
   	 </set>
   	 
-  	 <many-to-one name="add" column="ID_ADDRESS" unique="true" not-null="true"/>
+  	 <many-to-one name="add" class="Address" column="ID_ADDRESS" unique="true" not-null="false"/>
   	 
   </class>
 </hibernate-mapping>

@@ -13,7 +13,8 @@
 		<td><i>id contact: <input type="text" name="idContact" size="25"/></i></td>
 	</tr>
 	<tr>
-		<td><input class="button" type="submit" value="remove"/></td>
+		<td><input class="button" type="submit" value="remove"/>
+			<input class="button" type="reset" value="reset"/></td>
 	</tr>
 	</table>
 </form>

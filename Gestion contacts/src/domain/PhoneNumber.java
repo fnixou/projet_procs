@@ -5,7 +5,8 @@ public class PhoneNumber {
 	private int id;
 	private String phoneKind;
 	private String phoneNumber;
-	
+	private Contact contact;
+
 	public PhoneNumber() {
 		super();
 	}
@@ -41,7 +42,13 @@ public class PhoneNumber {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
 	
 	
 

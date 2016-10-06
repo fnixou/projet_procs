@@ -8,16 +8,16 @@
   	 </id>
   	 
   	 <property name="groupName">
-  	 	<column name="GROUPNAME" />
+  	 	<column name="GROUPNAME"/>
   	 </property>
   	 
-  	 <set name="contacts" table="CONTACT_CONTACTGROUP" inverse="true">
+  	 
+  	 <set name="contacts" table="CONTACT_GROUPCONTACT" inverse="true">
   	 	<key column="ID_CONTACTGROUP"/>
   	 	<many-to-many class="Contact" column="ID_CONTACT">
   	 	</many-to-many>
   	 </set>
   	 
-  	 <many-to-one name="contact" column="ID_CONTACT" class="CONTACT"/>
   	 
   </class>
 </hibernate-mapping>

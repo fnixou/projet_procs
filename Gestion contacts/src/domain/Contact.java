@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Contact {
@@ -8,9 +9,10 @@ public class Contact {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private Set books;
-	private Set profiles;
-	
+	private String add;
+	private Set<ContactGroup> books = new HashSet();
+	private Set<PhoneNumber> profiles = new HashSet();
+
 	public Contact() {
 		super();
 	}
@@ -54,7 +56,28 @@ public class Contact {
 		this.email = email;
 	}
 	
+	public String getAdd() {
+		return add;
+	}
+
+	public void setAdd(String add) {
+		this.add = add;
+	}
 	
-	
+	public Set<ContactGroup> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<ContactGroup> books) {
+		this.books = books;
+	}
+
+	public Set<PhoneNumber> getProfiles() {
+		return profiles;
+	}
+
+	public void setProfiles(Set<PhoneNumber> profiles) {
+		this.profiles = profiles;
+	}
 	
 }

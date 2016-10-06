@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import DAO.ContactDAO;
 import domain.Contact;
-import services.ContactService;
 
 /**
- * Servlet implementation class CreerContactServlet
+ * Servlet implementation class AddContactServlet
  */
 public class AddContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,7 +39,6 @@ public class AddContactServlet extends HttpServlet {
 		Contact contact = new Contact(request.getParameter("prenom"),request.getParameter("nom"),request.getParameter("mail"));
 		ContactDAO DAO = new ContactDAO();
 		DAO.AddContact(contact);
-		
 	}
 
 }
