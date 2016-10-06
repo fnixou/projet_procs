@@ -10,13 +10,7 @@
 <form method="post" action="SearchContactServlet">
 	<table>
 	<tr>
-		<td><i>Prenom: <input type="text" name="prenom" size="25"/></i></td>
-	</tr>
-	<tr>
-		<td><i>Nom: <input type="text" name="nom" size="25"/></i></td>
-	</tr>
-	<tr>
-		<td><i>Mail: <input type="text" name="mail" size="25"/></i></td>
+		<td><i>id contact: <input type="text" name="idContact" size="25"/></i></td>
 	</tr>
 	<tr>
 		<td><input class="button" type="submit" value="search"/>

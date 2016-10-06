@@ -11,9 +11,8 @@ public class PhoneNumber {
 		super();
 	}
 	
-	public PhoneNumber(int id, String phoneKind, String phoneNumber) {
+	public PhoneNumber(String phoneKind, String phoneNumber) {
 		super();
-		this.id = id;
 		this.phoneKind = phoneKind;
 		this.phoneNumber = phoneNumber;
 	}

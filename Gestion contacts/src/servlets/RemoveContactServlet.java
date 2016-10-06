@@ -45,6 +45,9 @@ public class RemoveContactServlet extends HttpServlet {
 		
 		ContactDAO DAO = new ContactDAO();
 		DAO.RemoveContact(c);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+		rd.forward(request, response);
 	}
 
 }

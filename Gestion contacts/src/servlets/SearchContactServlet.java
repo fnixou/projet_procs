@@ -1,10 +1,15 @@
 package servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import DAO.ContactDAO;
+import domain.Contact;
 
 /**
  * Servlet implementation class SearchContactServlet
@@ -32,8 +37,17 @@ public class SearchContactServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String id;
+		id = request.getParameter("idContact");
+		Contact c = new Contact();
+		c.setId(Long.valueOf(id).longValue());
+		
+		ContactDAO DAO = new ContactDAO();
+		DAO.SearchContact(c);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+		rd.forward(request, response);
 	}
 
 }

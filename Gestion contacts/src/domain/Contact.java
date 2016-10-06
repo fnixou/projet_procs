@@ -9,7 +9,7 @@ public class Contact {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String add;
+	private Address add;
 	private Set<ContactGroup> books = new HashSet();
 	private Set<PhoneNumber> profiles = new HashSet();
 
@@ -56,11 +56,11 @@ public class Contact {
 		this.email = email;
 	}
 	
-	public String getAdd() {
+	public Address getAdd() {
 		return add;
 	}
 
-	public void setAdd(String add) {
+	public void setAdd(Address add) {
 		this.add = add;
 	}
 	

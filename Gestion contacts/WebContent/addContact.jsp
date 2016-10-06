@@ -22,13 +22,13 @@
 	 	<td><h3>ADRESSE</h3></td>
 	</tr>
 	<tr>
-		<td><i>Rue : <input type="text" name="rue" size="25"/></i>
-		<td><i>Ville : <input type="text" name="ville" size="25"/></i>
+		<td><i>Rue : <input type="text" name="street" size="25"/></i>
+		<td><i>Ville : <input type="text" name="city" size="25"/></i>
 		<td><i>Code Postal : <input type="text" name="zip" size="25"/></i>
-		<td><i>Pays : <input type="text" name="pays" size="25"/></i>
+		<td><i>Pays : <input type="text" name="country" size="25"/></i>
 	</tr>
 	<tr>
-		<td><h3>TELEPHONE</h3></td>
+		<td><h3>TELEPHONE(S)</h3></td>
 	</tr>
 	<tr>
 		<td><i>Mobile : <input type="text" name="mobile" size="25"/></i>
@@ -40,11 +40,16 @@
 		<td><i>Bureau : <input type="text" name="bureau" size="25"/></i>
 	</tr>
 	<tr>
-		<td><i>Selectionner un groupe : <select name="groupes">
-		<i><option>Famille</option></i>
-		<i><option>Collegues</option></i>
-		<i><option>Amis</option></i>
-		</select>
+		<td><h3>GROUPE(S)</h3></td>
+	</tr>
+	<tr>
+		<td> Fammille <input type="checkbox" name="choixFamille" value="choixFamille"/></td>
+	</tr>
+	<tr>
+		<td> Collegues <input type="checkbox" name="choixCollegue" value="choixCollegue"/></td>
+	</tr>
+	<tr>
+		<td> Amis <input type="checkbox" name="choixAmis" value="choixAmis"/></td>
 	</tr>
 	<tr>
 		<td><i>Ajouter un groupe : <input type="text" name="nouveauGroupe" size="25"/></i>
