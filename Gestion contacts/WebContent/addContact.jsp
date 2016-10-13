@@ -7,8 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<script type="text/javascript">
+
+function statutCheck() {
+    if (document.getElementById('entrepriseCheck').checked) {
+        document.getElementById('siret').style.display = 'block';
+    }
+    else document.getElementById('siret').style.display = 'none';
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+   statutCheck();
+}, false);
+
+
+</script>
+
 <form method="post" action="AddContactServlet">
 	<table>
+	<tr>	
+	    <input type="radio" name="statut" onclick="javascript:statutCheck();" value="contact" id="contactCheck"> Contact
+		<input type="radio" name="statut" onclick="javascript:statutCheck();" value="entreprise" id="entrepriseCheck"> Entreprise	
+	</tr>
 	<tr>
 		<td><i>Prenom : <input type="text" name="prenom" size="25"/></i>
 	</tr>
@@ -17,6 +39,9 @@
 	</tr>
 	<tr>
 		<td><i>Mail : <input type="text" name="mail" size="25"/></i>
+	</tr>
+	<tr id="siret" style="display:none">
+		<td><i>Siret : <input type="text" name="siret" size="25"></i></td>
 	</tr>
 	<tr>
 	 	<td><h3>ADRESSE</h3></td>

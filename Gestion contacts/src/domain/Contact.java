@@ -12,6 +12,7 @@ public class Contact {
 	private Address add;
 	private Set<ContactGroup> books = new HashSet();
 	private Set<PhoneNumber> profiles = new HashSet();
+	private int version;
 
 	public Contact() {
 		super();
