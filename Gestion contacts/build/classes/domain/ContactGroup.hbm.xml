@@ -12,7 +12,7 @@
   	 </property>
   	 
   	 
-  	 <set name="contacts" table="CONTACT_GROUPCONTACT" inverse="true">
+  	 <set name="contacts" table="CONTACT_GROUPCONTACT" inverse="true" cascade="persist">
   	 	<key column="ID_CONTACTGROUP"/>
   	 	<many-to-many class="Contact" column="ID_CONTACT">
   	 	</many-to-many>

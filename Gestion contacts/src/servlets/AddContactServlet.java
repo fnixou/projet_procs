@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.ContactDAO;
 import domain.Address;
 import domain.Contact;
+import domain.ContactGroup;
 import domain.PhoneNumber;
 
 /**
@@ -56,12 +57,25 @@ public class AddContactServlet extends HttpServlet {
 		contact.getProfiles().add(phone2);
 		contact.getProfiles().add(phone3);
 		
-		/*Set<PhoneNumber> profiles = new HashSet();
-		profiles.add(phone1);
-		profiles.add(phone2);
-		profiles.add(phone3);
+		ContactGroup group1;
+		ContactGroup group2;
+		ContactGroup group3;
 		
-		contact.setProfiles(profiles);	*/	
+		if(request.getParameter("choixFamille") != null){
+			group1 = new ContactGroup("Famille");
+			contact.getBooks().add(group1);
+		}
+		
+		if(request.getParameter("choixCollegues") != null){
+			group2 = new ContactGroup("Collegues");
+			contact.getBooks().add(group2);
+		}
+		
+		if(request.getParameter("choixAmis") != null){
+			group3 = new ContactGroup("Amis");
+			contact.getBooks().add(group3);
+		}
+		
 		contact.setAdd(add);
 		
 		ContactDAO DAO = new ContactDAO();

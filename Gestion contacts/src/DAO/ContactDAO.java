@@ -13,13 +13,13 @@ public class ContactDAO implements ContactDAOInt{
 	
 	public void AddContact (Contact contact){
 		
-		Address add = contact.getAdd();
-		
+		Address add = contact.getAdd();		
 		
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();    
 		session.beginTransaction();            
-		session.save(contact);  
-		session.save(add);
+		/*session.save(contact);  
+		session.save(add);*/
+		session.persist(contact);
 
 		contact=(Contact) session.load(Contact.class, contact.getId());   
 		session.getTransaction().commit();

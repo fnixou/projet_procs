@@ -1,6 +1,6 @@
 package domain;
 
-public class Entreprise {
+public class Entreprise extends Contact {
 
 	private int numSiret;
 	

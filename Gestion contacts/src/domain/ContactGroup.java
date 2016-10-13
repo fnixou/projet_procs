@@ -13,9 +13,8 @@ public class ContactGroup {
 		super();
 	}
 
-	public ContactGroup(int groupId, String groupName) {
+	public ContactGroup(String groupName) {
 		super();
-		this.groupId = groupId;
 		this.groupName = groupName;
 	}
 	

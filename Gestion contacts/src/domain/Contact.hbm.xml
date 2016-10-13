@@ -7,6 +7,8 @@
    		<generator class="increment"/>
   	 </id>
   	 
+  	 <version name="version" access="field" column="VERSION"/> 
+  	 
   	 <property name="firstName">
   	 	<column name="FIRSTNAME"/>
   	 </property>
@@ -19,18 +21,23 @@
   	 	<column name="EMAIL"/>
   	 </property>
   	 
-  	 <set name="profiles" inverse="true">
+  	 <set name="profiles" inverse="true" cascade="persist">
   	 	<key column="ID_CONTACT"/>
   	 	<one-to-many class="PhoneNumber"/>
   	 </set>
   	 
-  	 <set name="books" table="CONTACT_GROUPCONTACT">
+  	 <set name="books" table="CONTACT_GROUPCONTACT" cascade="persist">
   	 	<key column="ID_CONTACT"/>
   	 	<many-to-many class="ContactGroup" column="ID_CONTACTGROUP">
   	 	</many-to-many>
   	 </set>
   	 
-  	 <many-to-one name="add" class="Address" column="ID_ADDRESS" unique="true" not-null="false"/>
+  	 <many-to-one name="add" class="Address" column="ID_ADDRESS" unique="true" not-null="false" cascade="persist"/>
+  	 
+  	 <joined-subclass name="Entreprise" table="ENTREPRISE">
+  	 	<key column="ID_CONTACT"/>
+  	 	<property name="numSiret" column="NUM_SIRET"/>
+  	 </joined-subclass>
   	 
   </class>
 </hibernate-mapping>

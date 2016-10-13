@@ -43,10 +43,10 @@
 		<td><h3>GROUPE(S)</h3></td>
 	</tr>
 	<tr>
-		<td> Fammille <input type="checkbox" name="choixFamille" value="choixFamille"/></td>
+		<td> Famille <input type="checkbox" name="choixFamille" value="choixFamille"/></td>
 	</tr>
 	<tr>
-		<td> Collegues <input type="checkbox" name="choixCollegue" value="choixCollegue"/></td>
+		<td> Collegues <input type="checkbox" name="choixCollegues" value="choixCollegue"/></td>
 	</tr>
 	<tr>
 		<td> Amis <input type="checkbox" name="choixAmis" value="choixAmis"/></td>
