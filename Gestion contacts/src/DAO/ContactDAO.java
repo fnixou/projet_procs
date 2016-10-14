@@ -1,6 +1,7 @@
 package DAO;
 
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import DAO_Interfaces.ContactDAOInt;
@@ -21,7 +22,7 @@ public class ContactDAO implements ContactDAOInt{
 		session.save(add);*/
 		session.persist(contact);
 
-		contact=(Contact) session.load(Contact.class, contact.getId());   
+		//contact=(Contact) session.load(Contact.class, contact.getId());   
 		session.getTransaction().commit();
 		//session.close();
 	}
@@ -32,7 +33,19 @@ public class ContactDAO implements ContactDAOInt{
 		
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();    
 		session.beginTransaction();            
-		session.update(contact);   
+		//session.update(contact);  
+		
+		 String hql = "UPDATE Contact set" 
+			      +" firstName = :FIRSTNAME,"
+			      +" lastName = :LASTNAME,"
+			      +" email = :EMAIL"
+			      +" WHERE id = :ID_CONTACT";
+			  Query query = session.createQuery(hql);
+			  query.setParameter("FIRSTNAME", contact.getFirstName());
+			  query.setParameter("LASTNAME", contact.getLastName());
+			  query.setParameter("EMAIL", contact.getEmail());
+			  query.setParameter("ID_CONTACT", contact.getId());
+			  query.executeUpdate();
 		session.getTransaction().commit();
 	}
 

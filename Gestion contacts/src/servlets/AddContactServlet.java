@@ -14,6 +14,7 @@ import DAO.ContactDAO;
 import domain.Address;
 import domain.Contact;
 import domain.ContactGroup;
+import domain.Entreprise;
 import domain.PhoneNumber;
 
 /**
@@ -77,9 +78,22 @@ public class AddContactServlet extends HttpServlet {
 		}
 		
 		contact.setAdd(add);
-		
 		ContactDAO DAO = new ContactDAO();
-		DAO.AddContact(contact);
+		
+		if("contact".equals(request.getParameter("statut"))){
+			DAO.AddContact(contact);
+		}
+		else{
+			Entreprise entreprise = new Entreprise();
+			entreprise.setFirstName(contact.getFirstName());
+			entreprise.setLastName(contact.getLastName());
+			entreprise.setEmail(contact.getEmail());
+			entreprise.setAdd(contact.getAdd());
+			entreprise.setBooks(contact.getBooks());
+			entreprise.setProfiles(contact.getProfiles());
+			entreprise.setNumSiret(Integer.valueOf(request.getParameter("siret")).intValue());
+			DAO.AddContact(entreprise);
+		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
 		rd.forward(request, response);

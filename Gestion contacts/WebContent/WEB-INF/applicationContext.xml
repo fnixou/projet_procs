@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="contactDAO" class="DAO.ContactDAO"></bean>
+	
+	<bean id="contactBean" class="domain.Contact">
+		<property name="add" ref="addressBean"></property>
+		<property name="firstName" value="Jean"></property>
+		<property name="lastName" value="Peuplus"></property>
+		<property name="email" value="Jean.Peuplus@gmail.com"></property>
+		<property name="profiles">
+			<set value-type="domain.PhoneNumber">
+				<ref bean="phoneNumberBureauBean" />
+				
+				<ref bean="phoneNumberMobileBean" />
+				<ref bean="phoneNumberMaisonBean" />
+			</set>
+		</property>
+		<property name="books">
+			<set value-type="domain.ContactGroup">
+				<ref bean="contactGroupFamilleBean" />
+				<ref bean="contactGroupAmisBean" />
+			</set>
+		</property>
+	</bean>
+	<bean id="addressBean" class="domain.Address">
+		<property name="city" value="Paris"></property>
+		<property name="contact" ref="contactBean"></property>
+		<property name="country" value="France"></property>
+		
+		<property name="street" value="rue de Paris"></property>
+		<property name="zip" value="75000"></property>
+	</bean>
+	
+	
+	
+	<bean id="phoneNumberBureauBean" class="domain.PhoneNumber">
+		<property name="contact" ref="contactBean"></property>
+		<property name="phoneKind" value="Bureau"></property>
+		<property name="phoneNumber" value="0102030405"></property>
+	</bean>
+	<bean id="phoneNumberMobileBean" class="domain.PhoneNumber">
+		<property name="contact" ref="contactBean"></property>
+		<property name="phoneKind" value="Mobile"></property>
+		<property name="phoneNumber" value="0601020304"></property>
+	</bean>
+	<bean id="phoneNumberMaisonBean" class="domain.PhoneNumber">
+		<property name="contact" ref="contactBean"></property>
+		<property name="phoneKind" value="Maison"></property>
+		<property name="phoneNumber" value="0301020405"></property>
+	</bean>
+	
+	
+	
+	<bean id="contactGroupFamilleBean" class="domain.ContactGroup">
+		
+		<property name="groupName" value="Famille"></property>
+		<property name="contacts">
+			<set value-type="domain.Contact">
+				<ref bean="contactBean" />
+			</set>
+		</property>
+	</bean>
+	<bean id="contactGroupAmisBean" class="domain.ContactGroup">
+		<property name="groupName" value="Amis"></property>
+		<property name="contacts">
+			<set value-type="domain.Contact">
+				<ref bean="contactBean" />
+			</set>
+		</property>
+	</bean>
+</beans>
